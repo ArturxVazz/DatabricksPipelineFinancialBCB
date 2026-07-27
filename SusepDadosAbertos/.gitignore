@@ -1,0 +1,15 @@
+# Segredos
+.env
+
+# Arquivos grandes
+*.zip
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# IDEs
+.idea/
+.vscode/
