@@ -1,16 +1,16 @@
-name: Ingestão BCB - Séries Temporais
+name: Ingestao BCB - Series Temporais
 
 on:
   schedule:
-    - cron: '0 10 * * 1-5'  # Todo dia útil às 7h (horário de Brasília = 10h UTC)
-  workflow_dispatch:         # Permite rodar manualmente também
+    - cron: '0 10 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   ingestao:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do repositório
+      - name: Checkout do repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Python
@@ -18,10 +18,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Instalar dependências
+      - name: Instalar dependencias
         run: pip install -r SusepDadosAbertos/requirements.txt
 
-      - name: Rodar bot de ingestão
+      - name: Rodar bot de ingestao
         env:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
