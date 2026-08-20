@@ -34,13 +34,13 @@ Séries coletadas:
 | CDI | 12 | Diária |
 | Câmbio (USD) | 1 | Diária |
 
-## Execução
+## Execução e agendamento
 
-O bot roda diariamente, sem intervenção manual, orquestrado via BotMaestro — garantindo que o dado mais recente de cada indicador esteja sempre disponível no Data Lake para as camadas seguintes de transformação.
+O bot roda diariamente, sem intervenção manual, agendado via **GitHub Actions** (workflow com `cron`) — garantindo que o dado mais recente de cada indicador esteja sempre disponível no Data Lake para as camadas seguintes de transformação.
 
 ## CI/CD (`.github/workflows/`)
 
-Pipeline de integração contínua via GitHub Actions, validando o código a cada push.
+Além do agendamento da extração diária, o repositório usa GitHub Actions para validar o código a cada push, mantendo a automação versionada, testável e sem depender de execução manual local.
 
 ## Stack
 
